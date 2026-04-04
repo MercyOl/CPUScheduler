@@ -462,6 +462,122 @@ Instructions:
             return processResults.Values.OrderBy(r => r.StartTime).ToList();
         }
 
+        private List<SchedulingResult> RunLotteryAlgorithm(List<ProcessData> processes)
+        {
+            var results = new List<SchedulingResult>();
+            var rand = new Random();
+            
+            int currentTime = 0;
+
+            var tickets = processes.ToDictionary(p => p.ProcessID, p => 10);
+            var remaining = processes.ToDictionary(p => p.ProcessID, p => p.BurstTime);
+            var completed = new HashSet<string>();
+
+            while (completed.Count < processes.Count)
+            {
+                var available = processes
+                    .Where(p => p.ArrivalTime <= currentTime && !completed.Contains(p.ProcessID))
+                    .ToList();
+
+                if (available.Count == 0)
+                {
+                    currentTime++;
+                    continue;
+                }    
+
+                int totalTickets = available.Sum(p => tickets[p.ProcessID]);
+                int luckyTicket = rand.Next(1, totalTickets + 1);
+
+                int ticketSum = 0;
+                ProcessData selected = null;
+
+                foreach (var p in available)
+                {
+                    ticketSum += tickets[p.ProcessID];
+                    if (ticketSum >= luckyTicket)
+                    {
+                        selected = p;
+                        break;
+                    }
+                }
+
+                remaining[selected.ProcessID]--;
+                if (remaining[selected.ProcessID] == 0)
+                {
+                    int finishTime = currentTime + 1;
+                    results.Add(new SchedulingResult
+                    {
+                        ProcessID = selected.ProcessID,
+                        ArrivalTime = selected.ArrivalTime,
+                        BurstTime = selected.BurstTime,
+                        FinishTime = finishTime,
+                        StartTime = finishTime - selected.BurstTime,
+                        TurnaroundTime = finishTime - selected.ArrivalTime,
+                        WaitingTime = (finishTime - selected.ArrivalTime) - selected.BurstTime
+                    });
+                    completed.Add(selected.ProcessID);
+                }
+                currentTime++;
+            }
+            return results;
+            
+        }
+
+        private List<SchedulingResult> RunSRTFAlgorithm(List<ProcessData> processes)
+        {
+            var results = new List<SchedulingResult>();
+
+            int currentTime = 0;
+
+            var remainingTime = processes.ToDictionary(p => p.ProcessID, p => p.BurstTime);
+            var startTimes = new Dictionary<string, int>();
+            var completed = new HashSet<string>();
+
+            while (completed.Count < processes.Count)
+            {
+                var available = processes
+                    .Where(p => p.ArrivalTime <= currentTime && !completed.Contains(p.ProcessID))
+                    .OrderBy(p => remainingTime[p.ProcessID])
+                    .ToList();
+
+                if (available.Count == 0)
+                {
+                    currentTime++;
+                    continue;
+                }
+
+                var current = available.First();
+
+                if (!startTimes.ContainsKey(current.ProcessID))
+                    startTimes[current.ProcessID] = currentTime;
+
+                remainingTime[current.ProcessID]--;
+
+                if (remainingTime[current.ProcessID] == 0)
+                {
+                    int finishTime = currentTime + 1;
+
+                    results.Add(new SchedulingResult
+                    {
+
+                        ProcessID = current.ProcessID,
+                        ArrivalTime = current.ArrivalTime,
+                        BurstTime = current.BurstTime,
+                        StartTime = startTimes[current.ProcessID],
+                        FinishTime = finishTime,
+                        TurnaroundTime = finishTime - current.ArrivalTime,
+                        WaitingTime = (finishTime - current.ArrivalTime) - current.BurstTime
+                    });
+
+                    completed.Add(current.ProcessID);
+                }
+
+                currentTime++;
+            }
+
+            return results;
+        }
+
         /// <summary>
         /// STUDENTS: Data structure for algorithm results
         /// Use this to store and display scheduling algorithm outcomes
@@ -928,6 +1044,50 @@ Instructions:
                     "No Process Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtProcess.Focus();
             }
+        }
+
+        private void LotteryButton_Click(object sender, EventArgs e)
+        {
+            var processData = GetProcessDataFromGrid();
+
+            if (processData.Count > 0)
+            {
+                var results = RunLotteryAlgorithm(processData);
+
+                DisplaySchedulingResults(results, "Lottery Scheduling");
+
+                ShowPanel(resultsPanel);
+                sidePanel.Height = btnDashBoard.Height;
+                sidePanel.Top = btnDashBoard.Top;
+            }
+            else
+            {
+                MessageBox.Show("Please set process count and ensure the data grid has process data.", 
+                    "No Process Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtProcess.Focus();
+            }
+        }
+
+        private void SRTFButton_Click(object sender, EventArgs e)
+        {
+         var processData = GetProcessDataFromGrid();
+
+            if (processData.Count > 0)
+            {
+                var results = RunSRTFAlgorithm(processData);
+
+                DisplaySchedulingResults(results, "SRTF - Shortest Remaining Time First");
+
+                ShowPanel(resultsPanel);
+                sidePanel.Height = btnDashBoard.Height;
+                sidePanel.Top = btnDashBoard.Top;
+            }
+            else
+            {
+                MessageBox.Show("Please set process count and ensure the data grid has process data.", 
+                    "No Process Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtProcess.Focus();
+            }   
         }
 
         /// <summary>
