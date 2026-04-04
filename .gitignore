@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CS-3502-CPU-Sim-Project-StartingPoint-main/CS-3502-CPU-Sim-Project-StartingPoint-main/.vs/CpuScheduler

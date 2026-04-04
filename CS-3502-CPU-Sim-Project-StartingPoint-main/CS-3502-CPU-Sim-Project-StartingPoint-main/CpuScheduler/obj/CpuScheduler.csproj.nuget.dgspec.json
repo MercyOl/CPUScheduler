@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj": {}
+    "C:\\Users\\molan\\source\\repos\\MercyOl\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj": {
+    "C:\\Users\\molan\\source\\repos\\MercyOl\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
+        "projectUniqueName": "C:\\Users\\molan\\source\\repos\\MercyOl\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
         "projectName": "CpuScheduler",
-        "projectPath": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
+        "projectPath": "C:\\Users\\molan\\source\\repos\\MercyOl\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
         "packagesPath": "C:\\Users\\molan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\obj\\",
+        "outputPath": "C:\\Users\\molan\\source\\repos\\MercyOl\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\molan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\molan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows7.0": {
+          "net8.0-windows": {
+            "framework": "net8.0-windows7.0",
             "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
@@ -41,7 +44,8 @@
         "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net8.0-windows7.0": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
           "targetAlias": "net8.0-windows",
           "dependencies": {
             "Microsoft.VisualBasic": {
