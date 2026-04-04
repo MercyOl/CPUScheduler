@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "arWUUZzmzuE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\molan\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
+    "C:\\Users\\molan\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\molan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\molan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\molan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
