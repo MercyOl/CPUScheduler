@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace CpuScheduler
         private DataTable processTable;
         private Random random = new Random();
         private bool isDarkMode = true; // Default to dark mode
+        private Button btnExportResults;
         
         // STUDENTS: Configure these limits based on your algorithm performance requirements
         private const int MIN_PROCESS_COUNT = 1;
@@ -610,6 +612,8 @@ Instructions:
             listView1.Columns.Add("Finish", 80, HorizontalAlignment.Center);
             listView1.Columns.Add("Waiting", 80, HorizontalAlignment.Center);
             listView1.Columns.Add("Turnaround", 90, HorizontalAlignment.Center);
+            listView1.Columns.Add("CPU Util (%)", 100, HorizontalAlignment.Center);
+            listView1.Columns.Add("Throughput", 100, HorizontalAlignment.Center);
 
             // Add process results
             foreach (var result in results)
@@ -621,37 +625,87 @@ Instructions:
                 item.SubItems.Add(result.FinishTime.ToString());
                 item.SubItems.Add(result.WaitingTime.ToString());
                 item.SubItems.Add(result.TurnaroundTime.ToString());
+                
+                item.SubItems.Add("");
+                item.SubItems.Add("");
+
                 listView1.Items.Add(item);
             }
             
             // Add summary statistics
             var avgWaiting = results.Average(r => r.WaitingTime);
             var avgTurnaround = results.Average(r => r.TurnaroundTime);
+
+            var totalBurstTime = results.Sum(r => r.BurstTime);
+            var totalTime = results.Max(r => r.FinishTime) - results.Min(r => r.ArrivalTime);
+
+            var cpuUtilization = totalTime > 0 
+            ? ((double)totalBurstTime / totalTime) * 100 
+            : 0;
+            var throughput = totalTime > 0 ? (double)results.Count / totalTime : 0;
             
             var summaryItem = new ListViewItem("SUMMARY");
+
             summaryItem.SubItems.Add(algorithmName);
             summaryItem.SubItems.Add($"{results.Count} processes");
             summaryItem.SubItems.Add($"Avg Wait: {avgWaiting:F1}");
             summaryItem.SubItems.Add($"Avg Turn: {avgTurnaround:F1}");
             summaryItem.SubItems.Add("");
             summaryItem.SubItems.Add("");
+            summaryItem.SubItems.Add("");
+            summaryItem.SubItems.Add("");
             listView1.Items.Add(summaryItem);
 
-            // TODO: STUDENTS - Add performance metrics calculation and display here
-            // Required metrics for your project report:
-            // 1. Average Waiting Time (AWT) - sum of all waiting times / number of processes
-            // 2. Average Turnaround Time (ATT) - sum of all turnaround times / number of processes  
-            // 3. CPU Utilization (%) - (total burst time / total time) * 100
-            // 4. Throughput (processes/second) - number of processes / total time
-            // 5. Response Time (RT) [Optional] - time from arrival to first execution
-            // Display these metrics in the results view for comparison between algorithms
-            
-            // TODO: STUDENTS - Add CSV export functionality for results data
-            // Create a "Export Results" button in the results panel to save:
-            // - Individual process results (what's shown in listView1)
-            // - Performance metrics summary for each algorithm tested
-            // Reference the SaveData_Click() method above to learn CSV file handling
-            // This will help you create tables/charts for your project report
+
+            var metricsItem = new ListViewItem("METRICS");
+
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add("");
+            metricsItem.SubItems.Add(cpuUtilization.ToString("F2"));
+            metricsItem.SubItems.Add(throughput.ToString("F3"));
+
+            listView1.Items.Add(metricsItem);
+
+            ExportResultsToCSV(results, algorithmName);
+
+        }
+
+        private void ExportResultsToCSV(List<SchedulingResult> results, string algorithmName)
+        {
+            string fileName = $"{algorithmName}_results.csv";
+            string path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), fileName);
+
+            using (System.IO.StreamWriter writer = new StreamWriter(path))
+            {
+                // Header
+                writer.WriteLine("ProcessID,ArrivalTime,BurstTime,StartTime,FinishTime,WaitingTime,TurnaroundTime");
+
+                // Data rows
+                foreach (var r in results)
+                {
+                    writer.WriteLine($"{r.ProcessID},{r.ArrivalTime},{r.BurstTime},{r.StartTime},{r.FinishTime},{r.WaitingTime},{r.TurnaroundTime}");
+                }
+
+                // Summary stats
+                double avgWT = results.Average(r => r.WaitingTime);
+                double avgTAT = results.Average(r => r.TurnaroundTime);
+
+                int totalBurst = results.Sum(r => r.BurstTime);
+                int totalTime = results.Max(r => r.FinishTime) - results.Min(r => r.ArrivalTime);
+
+                double cpuUtil = totalTime > 0 ? (double)totalBurst / totalTime * 100 : 0;
+                double throughput = totalTime > 0 ? (double)results.Count / totalTime : 0;
+
+                writer.WriteLine();
+                writer.WriteLine($"Average Waiting Time,{avgWT:F2}");
+                writer.WriteLine($"Average Turnaround Time,{avgTAT:F2}");
+                writer.WriteLine($"CPU Utilization,{cpuUtil:F2}%");
+                writer.WriteLine($"Throughput,{throughput:F3}");
+            }
         }
 
         /// <summary>
@@ -957,6 +1011,12 @@ Instructions:
                 }
             }
         }
+
+
+        /// <summary>
+        /// STUDENTS: Exports scheduling results to CSV file for analysis and reporting
+        /// This allows you to create tables/charts for your project report
+        /// </summary>
 
 
         /// <summary>

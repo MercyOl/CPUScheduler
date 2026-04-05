@@ -10,5 +10,15 @@
     "C:\\Users\\molan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
     "C:\\Users\\molan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\molan\\New folder\\CPUScheduler\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CS-3502-CPU-Sim-Project-StartingPoint-main\\CpuScheduler\\CpuScheduler.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

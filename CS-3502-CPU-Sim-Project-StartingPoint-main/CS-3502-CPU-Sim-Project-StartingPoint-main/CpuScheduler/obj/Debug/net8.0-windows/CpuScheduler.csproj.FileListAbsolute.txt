@@ -15,3 +15,20 @@ C:\Users\molan\New folder\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-mai
 C:\Users\molan\New folder\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.pdb
 C:\Users\molan\New folder\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.genruntimeconfig.cache
 C:\Users\molan\New folder\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\ref\CpuScheduler.dll
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.exe
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.dll.config
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.deps.json
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.runtimeconfig.json
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.dll
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\bin\Debug\net8.0-windows\CpuScheduler.pdb
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.CpuSchedulerForm.resources
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.Properties.Resources.resources
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.csproj.GenerateResource.cache
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.csproj.CoreCompileInputs.cache
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.sourcelink.json
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.dll
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\refint\CpuScheduler.dll
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.pdb
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\CpuScheduler.genruntimeconfig.cache
+C:\Users\molan\source\repos\MercyOl\CPUScheduler\CS-3502-CPU-Sim-Project-StartingPoint-main\CS-3502-CPU-Sim-Project-StartingPoint-main\CpuScheduler\obj\Debug\net8.0-windows\ref\CpuScheduler.dll
